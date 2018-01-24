@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="textColor">#000000</color>
+    <color name="background_color">#ffffff</color>
+
+    <color name="card_bg_color">#b1c2c0c0</color>
+    <color name="card_bg_color_dark">#b1292929</color>
+
+    <color name="even_row">#00ffffff</color>
+    <color name="odd_row">#be7e7d7d</color>
+</resources>

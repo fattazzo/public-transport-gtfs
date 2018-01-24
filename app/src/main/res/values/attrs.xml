@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="cardBackground" format="reference" />
+    <attr name="bgBackground" format="reference" />
+    <attr name="bgBackgroundInverted" format="reference" />
+    <attr name="textColorInverted" format="reference" />
+
+    <attr name="oddRowColor" format="reference" />
+    <attr name="evenRowColor" format="reference" />
+
+    <attr name="toolbar_theme" format="reference" />
+    <attr name="toolbar_textColor" format="reference" />
+    <attr name="popup_theme" format="reference" />
+</resources>
