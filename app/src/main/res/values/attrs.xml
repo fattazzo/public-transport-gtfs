@@ -3,6 +3,7 @@
     <attr name="cardBackground" format="reference" />
     <attr name="bgBackground" format="reference" />
     <attr name="bgBackgroundInverted" format="reference" />
+    <attr name="bgBackgroundDark" format="reference" />
     <attr name="textColorInverted" format="reference" />
 
     <attr name="oddRowColor" format="reference" />

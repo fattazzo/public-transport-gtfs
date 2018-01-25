@@ -1,17 +1,18 @@
-package com.gmail.fattazzo.publictransportgtfs.transitfeed.domain
+package com.gmail.fattazzo.publictransportgtfs.transitfeed.domain.response
 
+import com.gmail.fattazzo.publictransportgtfs.transitfeed.domain.Feed
 import com.google.gson.annotations.SerializedName
-
 
 /**
  * @author fattazzo
  *         <p/>
- *         date: 24/01/18
+ *         date: 25/01/18
  */
-class LocationResponse {
+class FeedResponse {
 
     class Result {
-        val locations: List<Location>? = null
+        val total: Int? = null
+        val feeds: List<Feed>? = null
     }
 
     @SerializedName("results")

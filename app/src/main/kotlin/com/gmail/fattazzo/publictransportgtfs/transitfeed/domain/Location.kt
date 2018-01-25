@@ -1,6 +1,7 @@
 package com.gmail.fattazzo.publictransportgtfs.transitfeed.domain
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 import java.math.BigDecimal
 
 /**
@@ -8,7 +9,7 @@ import java.math.BigDecimal
  *         <p/>
  *         date: 24/01/18
  */
-class Location {
+class Location : Serializable {
 
     @SerializedName("id")
     var id: Int = -1
@@ -26,4 +27,8 @@ class Location {
     var latitude: BigDecimal = BigDecimal.ZERO
     @SerializedName("lng")
     var longitude: BigDecimal = BigDecimal.ZERO
+
+    var locations: MutableList<Location> = mutableListOf()
+
+    var parent: Location? = null
 }

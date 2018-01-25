@@ -19,6 +19,7 @@
 
         <item name="cardBackground">@color/card_bg_color</item>
         <item name="bgBackground">@color/background_color</item>
+        <item name="bgBackgroundDark">@color/background_color_dark</item>
 
         <item name="oddRowColor">@color/odd_row</item>
         <item name="evenRowColor">@color/even_row</item>

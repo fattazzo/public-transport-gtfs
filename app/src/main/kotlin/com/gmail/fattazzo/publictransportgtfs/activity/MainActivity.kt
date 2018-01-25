@@ -1,6 +1,8 @@
 package com.gmail.fattazzo.publictransportgtfs.activity
 
+import android.os.Bundle
 import android.support.design.widget.NavigationView
+import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
@@ -8,16 +10,13 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import com.gmail.fattazzo.publictransportgtfs.R
-import com.gmail.fattazzo.publictransportgtfs.transitfeed.Config
-import com.gmail.fattazzo.publictransportgtfs.transitfeed.domain.LocationResponse
-import com.gmail.fattazzo.publictransportgtfs.transitfeed.rest.ApiRestCLient
+import com.gmail.fattazzo.publictransportgtfs.fragment.BaseFragment
+import com.gmail.fattazzo.publictransportgtfs.fragment.main.MainFragment_
+import com.gmail.fattazzo.publictransportgtfs.utils.FragmentUtils
 import org.androidannotations.annotations.AfterViews
-import org.androidannotations.annotations.Click
 import org.androidannotations.annotations.EActivity
 import org.androidannotations.annotations.ViewById
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+
 
 @EActivity(R.layout.activity_main)
 open class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -43,22 +42,14 @@ open class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         navView.itemIconTintList = null
     }
 
-    @Click
-    fun floatingActionButtonClicked() {
-        ApiRestCLient.locationsService.getLocations(Config.key).enqueue(object : Callback<LocationResponse> {
-            override fun onResponse(call: Call<LocationResponse>, response: Response<LocationResponse>) {
-                    if (response.isSuccessful) {
-                        println("posts loaded from API. Locations: " + response.body().result?.locations?.size)
-                    } else {
-                        val statusCode = response.code()
-                        println("Error code " + statusCode)
-                }
-            }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-            override fun onFailure(call: Call<LocationResponse>?, t: Throwable?) {
-                println("error loading from API")
-            }
-        })
+        if (savedInstanceState == null) {
+            // Instanzio il fragment se savedInstanceState == null altrimenti (ad es. girando il dispositivo)
+            // viene rimesso anche se quello attivo è un altro
+            FragmentUtils.replace(this, MainFragment_.builder().build())
+        }
     }
 
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
@@ -78,6 +69,24 @@ open class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    override fun onBackPressed() {
+
+        val fragmentManager = supportFragmentManager
+
+        val fragments = fragmentManager.fragments
+
+        val li = fragments.listIterator(fragments.size)
+        while (li.hasPrevious()) {
+            val fragment = li.previous() as Fragment
+            if (fragment is BaseFragment) {
+                val done = (fragment as BaseFragment).backPressed()
+                if (done) {
+                    break
+                }
+            }
+        }
     }
 
     companion object {

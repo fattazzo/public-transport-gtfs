@@ -6,10 +6,11 @@
 
     <color name="textColor">#000000</color>
     <color name="background_color">#ffffff</color>
+    <color name="background_color_dark">#efeded</color>
 
     <color name="card_bg_color">#b1c2c0c0</color>
     <color name="card_bg_color_dark">#b1292929</color>
 
     <color name="even_row">#00ffffff</color>
-    <color name="odd_row">#be7e7d7d</color>
+    <color name="odd_row">#bec4c3c3</color>
 </resources>
