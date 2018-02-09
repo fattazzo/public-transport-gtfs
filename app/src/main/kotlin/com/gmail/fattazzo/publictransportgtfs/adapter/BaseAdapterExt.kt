@@ -20,7 +20,7 @@ abstract class BaseAdapterExt<T> : BaseAdapter() {
     @RootContext
     lateinit var rootContext: Context
 
-    var items: List<T> = listOf()
+    private var items: List<T> = listOf()
 
     override fun getCount(): Int {
         return items.size
@@ -35,6 +35,7 @@ abstract class BaseAdapterExt<T> : BaseAdapter() {
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+        @Suppress("UNCHECKED_CAST")
         val bindableView: BindableView<T> = if (convertView == null) {
             buildView(rootContext)
         } else {

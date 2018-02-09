@@ -9,7 +9,7 @@ import java.util.*
 
 abstract class RecyclerViewAdapterBase<T, V : BindableView<T>> : RecyclerView.Adapter<ViewWrapper<T, V>>() {
 
-    interface OnItemClickListener<T> {
+    interface OnItemClickListener<in T> {
         fun onItemClick(item: T)
     }
 
@@ -40,7 +40,7 @@ abstract class RecyclerViewAdapterBase<T, V : BindableView<T>> : RecyclerView.Ad
             }
         }
 
-        setAnimation(holder.itemView, position);
+        setAnimation(holder.itemView, position)
     }
 
     private fun setAnimation(viewToAnimate: View, position: Int) {

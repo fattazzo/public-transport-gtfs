@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Public Transport GTFS</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="dialog_wait_content">Please wait…</string>
+
+    <string name="dialog_permission_mandatory_title">Permissions mandatory</string>
+    <string name="dialog_permission_mandatory_content">All the permissions are required for this app</string>
 </resources>

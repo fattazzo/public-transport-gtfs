@@ -29,6 +29,13 @@
         <item name="popup_theme">@style/AppTheme.PopupOverlay</item>
 
         <item name="listPreferredItemHeightSmall">@dimen/design_navigation_items_height</item>
+
+        <item name="android:buttonStyle">@style/AppButton</item>
+    </style>
+
+    <style name="AppButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/colorPrimary</item>
+        <item name="android:textColor">@color/textColor</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar">

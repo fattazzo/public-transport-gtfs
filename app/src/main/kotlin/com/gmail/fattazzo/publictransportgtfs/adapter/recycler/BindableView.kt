@@ -8,7 +8,7 @@ import android.support.constraint.ConstraintLayout
  *         <p/>
  *         date: 25/01/18
  */
-abstract class BindableView<T>(context: Context?) : ConstraintLayout(context) {
+abstract class BindableView<in T>(context: Context?) : ConstraintLayout(context) {
 
     abstract fun bind(item: T)
 }

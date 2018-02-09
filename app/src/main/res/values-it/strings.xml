@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Public Transport GTFS</string>
+
+    <string name="dialog_wait_content">Attendere prego…</string>
+
+    <string name="dialog_permission_mandatory_title">Permessi richiesti</string>
+    <string name="dialog_permission_mandatory_content">Tutte le autorizzazioni sono necessarie per questa app</string>
+</resources>

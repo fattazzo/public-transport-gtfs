@@ -2,7 +2,7 @@ package com.gmail.fattazzo.publictransportgtfs.fragment.main
 
 import com.gmail.fattazzo.publictransportgtfs.R
 import com.gmail.fattazzo.publictransportgtfs.fragment.BaseFragment
-import com.gmail.fattazzo.publictransportgtfs.fragment.transitfeed.locations.LocationsFragment_
+import com.gmail.fattazzo.publictransportgtfs.fragment.feeds.source.transitland.ParamsFragment_
 import com.gmail.fattazzo.publictransportgtfs.utils.FragmentUtils
 import org.androidannotations.annotations.Click
 import org.androidannotations.annotations.EFragment
@@ -17,6 +17,6 @@ open class MainFragment : BaseFragment() {
 
     @Click
     fun buttonClicked() {
-        FragmentUtils.replace(activity, LocationsFragment_.builder().build())
+        FragmentUtils.add(activity, ParamsFragment_.builder().build())
     }
 }
