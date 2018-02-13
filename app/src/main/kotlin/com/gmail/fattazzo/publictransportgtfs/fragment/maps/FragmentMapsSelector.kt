@@ -1,6 +1,7 @@
 package com.gmail.fattazzo.publictransportgtfs.fragment.maps
 
 import com.gmail.fattazzo.publictransportgtfs.feeds.source.GeoJson
+import com.gmail.fattazzo.publictransportgtfs.feeds.source.GeoJsonFeatures
 import com.gmail.fattazzo.publictransportgtfs.fragment.maps.geojson.GeoJsonMapFragment
 import com.gmail.fattazzo.publictransportgtfs.fragment.maps.geojson.google.GoogleMapGeoJsonFragment_
 import com.gmail.fattazzo.publictransportgtfs.fragment.maps.geojson.openstreet.OpenStreetGeoJsonFragment_
@@ -12,11 +13,11 @@ import com.gmail.fattazzo.publictransportgtfs.fragment.maps.geojson.openstreet.O
  */
 object FragmentMapsSelector {
 
-    fun getGeoJsonFragment(type: Int, geoJson: GeoJson): GeoJsonMapFragment {
+    fun getGeoJsonFragment(type: Int, geoJson: GeoJson?, geoJsonFeatures: GeoJsonFeatures?): GeoJsonMapFragment {
         return when (type) {
-            0 -> OpenStreetGeoJsonFragment_.builder().geoJson(geoJson).build()
-            1 -> GoogleMapGeoJsonFragment_.builder().geoJson(geoJson).build()
-            else -> OpenStreetGeoJsonFragment_.builder().geoJson(geoJson).build()
+            0 -> OpenStreetGeoJsonFragment_.builder().geoJson(geoJson).geoJsonFeatures(geoJsonFeatures).build()
+            1 -> GoogleMapGeoJsonFragment_.builder().geoJson(geoJson).geoJsonFeatures(geoJsonFeatures).build()
+            else -> OpenStreetGeoJsonFragment_.builder().geoJson(geoJson).geoJsonFeatures(geoJsonFeatures).build()
         }
     }
 

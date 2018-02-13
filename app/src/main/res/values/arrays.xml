@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="map_providers">
+    <string-array name="map_providers" translatable="false">
         <item>Open Street Map</item>
         <item>Google Map</item>
     </string-array>

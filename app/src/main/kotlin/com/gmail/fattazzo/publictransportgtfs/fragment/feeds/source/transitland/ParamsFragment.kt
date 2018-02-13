@@ -40,7 +40,11 @@ open class ParamsFragment : BaseFragment(), CountryCodePicker.OnCountryChangeLis
     }
 
     private fun bindViews() {
-        countrySpinner.setCountryForNameCode(searchParams.countryCode)
+        if (searchParams.countryCode.isBlank()) {
+            searchParams.countryCode = countrySpinner.selectedCountryNameCode
+        } else {
+            countrySpinner.setCountryForNameCode(searchParams.countryCode)
+        }
         countrySpinner.setOnCountryChangeListener(this)
 
         populateLocations()

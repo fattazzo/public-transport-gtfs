@@ -30,9 +30,20 @@ open class OpenStreetGeoJsonFragment : GeoJsonMapFragment(), MapView.OnFirstLayo
 
     @AfterViews
     fun init() {
+        showGeoJsonObject()
+    }
 
+    override fun onFirstLayout(v: View?, left: Int, top: Int, right: Int, bottom: Int) {
+        if (mInitialBoundingBox != null) {
+            mapView.zoomToBoundingBox(mInitialBoundingBox, false);
+            mapView.zoomToBoundingBox(mInitialBoundingBox, false);
+            mapView.invalidate()
+        }
+    }
+
+    override fun showGeoJsonObject(geoJson: String) {
         val kmlDocument = KmlDocument()
-        kmlDocument.parseGeoJSON(geoJsonAsString())
+        kmlDocument.parseGeoJSON(geoJson)
 
         val defaultMarker = resources.getDrawable(R.drawable.marker_default)
 
@@ -65,11 +76,7 @@ open class OpenStreetGeoJsonFragment : GeoJsonMapFragment(), MapView.OnFirstLayo
         }
     }
 
-    override fun onFirstLayout(v: View?, left: Int, top: Int, right: Int, bottom: Int) {
-        if (mInitialBoundingBox != null) {
-            mapView.zoomToBoundingBox(mInitialBoundingBox, false);
-            mapView.zoomToBoundingBox(mInitialBoundingBox, false);
-            mapView.invalidate()
-        }
+    override fun showGeoJsonFeatures(geoJsonFeatures: List<String>) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

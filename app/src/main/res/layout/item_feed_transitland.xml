@@ -80,19 +80,6 @@
             app:layout_constraintTop_toBottomOf="@+id/createdAtTV" />
 
         <ImageButton
-            android:id="@+id/downloadButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="@color/colorPrimary"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/updatedAtTV"
-            app:srcCompat="@drawable/download" />
-
-        <ImageButton
             android:id="@+id/geoJsonMapButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

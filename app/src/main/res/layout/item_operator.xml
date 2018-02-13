@@ -50,17 +50,27 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:paddingBottom="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/nameTV"
                 app:layout_constraintTop_toBottomOf="@+id/nameTV" />
 
+            <TextView
+                android:id="@+id/locationTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:paddingBottom="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/nameTV"
+                app:layout_constraintTop_toBottomOf="@+id/websiteTV" />
+
             <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/websiteTV">
+                app:layout_constraintTop_toBottomOf="@+id/locationTV">
 
                 <ImageButton
                     android:id="@+id/geoJsonMapButton"
@@ -69,9 +79,6 @@
                     android:layout_marginEnd="4dp"
                     android:layout_weight="1"
                     android:backgroundTint="@android:color/holo_red_light"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/websiteButton"
-                    app:layout_constraintTop_toBottomOf="@+id/websiteTV"
                     app:srcCompat="@drawable/map" />
 
                 <ImageButton
@@ -82,10 +89,16 @@
                     android:layout_marginStart="24dp"
                     android:layout_weight="1"
                     android:backgroundTint="@android:color/holo_blue_light"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/websiteTV"
                     app:srcCompat="@drawable/info" />
+
+                <ImageButton
+                    android:id="@+id/downloadButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="24dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    app:srcCompat="@drawable/download" />
             </LinearLayout>
 
         </android.support.constraint.ConstraintLayout>

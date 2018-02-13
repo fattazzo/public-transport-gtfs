@@ -8,6 +8,7 @@ import android.widget.Button
 import com.gmail.fattazzo.publictransportgtfs.R
 import com.gmail.fattazzo.publictransportgtfs.adapter.recycler.RecyclerViewAdapterBase
 import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.domain.Operator
+import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.domain.response.Meta
 import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.domain.response.OperatorResponse
 import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.rest.ApiRestCLient
 import com.gmail.fattazzo.publictransportgtfs.fragment.BaseFragment
@@ -46,7 +47,7 @@ open class ResultsFragment : BaseFragment() {
 
     @JvmField
     @InstanceState
-    var meta: OperatorResponse.Meta? = null
+    var meta: Meta? = null
 
     @JvmField
     @InstanceState
@@ -81,8 +82,11 @@ open class ResultsFragment : BaseFragment() {
 
         val options: MutableMap<String, String> = mutableMapOf()
         options["country"] = searchParams.countryCode
-        if (searchParams.location != null) {
+        if (searchParams.location != null && searchParams.location!!.isNotEmpty()) {
             options["state"] = searchParams.location!!.code
+        }
+        if (!searchParams.name.isNullOrBlank()) {
+            options["name"] = searchParams.name!!
         }
 
         ApiRestCLient.operatorService.getOperators(offset = searchParams.offset,

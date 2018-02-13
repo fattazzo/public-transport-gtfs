@@ -9,8 +9,8 @@ android {
         applicationId "com.gmail.fattazzo.publictransportgtfs"
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "0.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         setProperty("archivesBaseName", "Public-Transport-GTFS")
     }
@@ -71,6 +71,7 @@ dependencies {
     compile 'org.osmdroid:osmdroid-android:SNAPSHOT'
     compile 'com.github.MKergall:osmbonuspack:6.4'
 
+    compile 'com.github.clans:fab:1.6.4'
 
     compile 'com.github.fattazzo:gtfs-lib:v1.1'
 

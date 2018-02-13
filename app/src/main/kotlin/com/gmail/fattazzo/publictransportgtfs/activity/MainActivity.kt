@@ -14,7 +14,7 @@ import android.view.MenuItem
 import com.afollestad.materialdialogs.MaterialDialog
 import com.gmail.fattazzo.publictransportgtfs.R
 import com.gmail.fattazzo.publictransportgtfs.fragment.BaseFragment
-import com.gmail.fattazzo.publictransportgtfs.fragment.feeds.source.transitland.ParamsFragment_
+import com.gmail.fattazzo.publictransportgtfs.fragment.main.MainFragment_
 import com.gmail.fattazzo.publictransportgtfs.utils.FragmentUtils
 import com.gmail.fattazzo.publictransportgtfs.utils.PermissionsUtil
 import org.androidannotations.annotations.AfterViews
@@ -51,7 +51,7 @@ open class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
         if (savedInstanceState == null) {
             PermissionsUtil.askPermissions(this)
-            FragmentUtils.replace(this, ParamsFragment_.builder().build())
+            FragmentUtils.replace(this, MainFragment_.builder().build())
         }
     }
 

@@ -37,4 +37,8 @@ class Location : Serializable {
     override fun hashCode(): Int {
         return code.hashCode()
     }
+
+    fun isNotEmpty(): Boolean {
+        return code.isNotBlank()
+    }
 }

@@ -16,30 +16,10 @@ import org.androidannotations.annotations.RootContext
 @EBean(scope = EBean.Scope.Singleton)
 open class LocationsManager {
 
-    private var locationsMap: Map<String, List<Location>>? = null
-        get() {
-            if (field == null) {
-                loadLocations()
-            }
-            return field
-        }
-
-    @RootContext
-    lateinit var context: Context
-
-    /**
-     * Get ISO3166-2 location by country code
-     *
-     * @param countryCode ISO two digits country code
-     */
-    fun getLocations(countryCode: String): List<Location> {
-        return locationsMap?.get(countryCode).orEmpty()
-    }
-
-    /**
-     * Load all location from json file
-     */
-    private fun loadLocations() {
+    private val locationsMap: Map<String, List<Location>> by lazy {
+        /**
+         * Load all location from json file
+         */
         val fileName = "locations.json"
         val jsonString = context.assets.open(fileName).bufferedReader().use {
             it.readText()
@@ -50,6 +30,34 @@ open class LocationsManager {
 
         val locations = GsonBuilder().create().fromJson<List<Location>>(jsonString, listType)
 
-        locationsMap = locations.groupBy({ it.countryCode }, { it })
+        locations.groupBy({ it.countryCode }, { it })
+    }
+
+    private val emptyLocation: Location by lazy {
+        val loc = Location()
+        loc.code = ""
+        loc.countryCode = ""
+        loc.name = ""
+        loc
+    }
+
+    @RootContext
+    lateinit var context: Context
+
+    /**
+     * Get ISO3166-2 location by country code
+     *
+     * @param countryCode ISO two digits country code
+     */
+    fun getLocations(countryCode: String): List<Location> {
+        val locations = mutableListOf(emptyLocation)
+        locations.addAll(locationsMap[countryCode].orEmpty())
+        return locations
+    }
+
+    fun getLocationByCode(code: String): Location {
+        val countryLocations = getLocations(code.split('-')[0])
+        val locMap: Map<String, Location> = countryLocations.map { it.code to it }.toMap()
+        return locMap[code] ?: emptyLocation
     }
 }

@@ -6,4 +6,10 @@
 
     <string name="dialog_permission_mandatory_title">Permessi richiesti</string>
     <string name="dialog_permission_mandatory_content">Tutte le autorizzazioni sono necessarie per questa app</string>
+
+    <string name="app_exit_comfirmation">Uscire dall\'applicazione?</string>
+
+    <string name="country">Stato</string>
+    <string name="area">Area</string>
+    <string name="operator_name">Nome operatore</string>
 </resources>

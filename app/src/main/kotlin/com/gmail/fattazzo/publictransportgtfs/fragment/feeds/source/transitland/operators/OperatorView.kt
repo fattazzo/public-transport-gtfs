@@ -8,6 +8,7 @@ import com.gmail.fattazzo.publictransportgtfs.R
 import com.gmail.fattazzo.publictransportgtfs.activity.maps.GeoJsonMapsActivity_
 import com.gmail.fattazzo.publictransportgtfs.adapter.recycler.BindableView
 import com.gmail.fattazzo.publictransportgtfs.feeds.source.GeoJson
+import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.LocationsManager
 import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.domain.Operator
 import com.gmail.fattazzo.publictransportgtfs.utils.Utils
 import org.androidannotations.annotations.Bean
@@ -31,6 +32,9 @@ open class OperatorView(context: Context?) : BindableView<Operator>(context) {
     lateinit var websiteTV: TextView
 
     @ViewById
+    lateinit var locationTV: TextView
+
+    @ViewById
     lateinit var geoJsonMapButton: ImageButton
 
     @ViewById
@@ -39,9 +43,15 @@ open class OperatorView(context: Context?) : BindableView<Operator>(context) {
     @Bean
     lateinit var utils: Utils
 
+    @Bean
+    lateinit var locationsManager: LocationsManager
+
+    private var idOperator: String = ""
     private var geoJson: GeoJson? = null
 
     override fun bind(item: Operator) {
+
+        idOperator = item.onestopId.orEmpty()
 
         nameTV.text = item.name
         websiteTV.text = item.website
@@ -52,6 +62,10 @@ open class OperatorView(context: Context?) : BindableView<Operator>(context) {
             websiteTV.visibility = View.GONE
             websiteButton.visibility = View.GONE
         }
+
+        val location = locationsManager.getLocationByCode(item.state.orEmpty())
+        locationTV.text = location.name
+        locationTV.visibility = if (locationTV.text.isNotBlank()) View.VISIBLE else View.GONE
 
         geoJson = GeoJson.fromOperator(item)
         geoJsonMapButton.visibility = if (geoJson != null) View.VISIBLE else View.GONE
