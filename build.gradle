@@ -3,6 +3,7 @@
 buildscript {
     ext.kotlin_version = '1.2.21'
     ext.android_annotation_version = '4.3.1'
+    ext.buildToolsVersion = '27.0.2'
     repositories {
         google()
         jcenter()
@@ -21,6 +22,8 @@ allprojects {
         google()
         jcenter()
         maven { url 'https://jitpack.io' }
+        // ActiveAndroid
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
     }
 }
 

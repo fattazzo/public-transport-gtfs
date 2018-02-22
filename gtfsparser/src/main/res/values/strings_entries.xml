@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="entry_agency">Agency</string>
+    <string name="entry_calendar">Calendar</string>
+    <string name="entry_calendar_date">Calendar date</string>
+    <string name="entry_fare_attribute">Fare attribute</string>
+    <string name="entry_fare_rule">Fare rule</string>
+    <string name="entry_feed_info">Feed info</string>
+    <string name="entry_route">Route</string>
+    <string name="entry_shape">Shape</string>
+    <string name="entry_stop">Stop</string>
+    <string name="entry_stop_time">Stop time</string>
+    <string name="entry_transfer">Transfer</string>
+    <string name="entry_trip">Trip</string>
+
+    <string name="entry_agencies">Agencies</string>
+    <string name="entry_calendars">Calendars</string>
+    <string name="entry_calendar_dates">Calendar dates</string>
+    <string name="entry_fare_attributes">Fare attributes</string>
+    <string name="entry_fare_rules">Fare rules</string>
+    <string name="entry_feed_infos">Feed infos</string>
+    <string name="entry_routes">Routes</string>
+    <string name="entry_shapes">Shapes</string>
+    <string name="entry_stops">Stops</string>
+    <string name="entry_stop_times">Stop times</string>
+    <string name="entry_transfers">Transfers</string>
+    <string name="entry_trips">Trips</string>
+</resources>

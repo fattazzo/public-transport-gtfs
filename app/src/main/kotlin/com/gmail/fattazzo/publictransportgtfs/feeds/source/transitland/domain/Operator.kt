@@ -10,7 +10,7 @@ class Operator: Serializable {
     var geometry: Geometry? = null
 
     @SerializedName("onestop_id")
-    var onestopId: String? = null
+    lateinit var onestopId: String
 
     @SerializedName("created_at")
     var createdAt: String? = null

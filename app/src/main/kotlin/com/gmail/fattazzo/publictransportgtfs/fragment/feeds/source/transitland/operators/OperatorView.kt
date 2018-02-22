@@ -4,12 +4,15 @@ import android.content.Context
 import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import com.gmail.fattazzo.publictransportgtfs.R
 import com.gmail.fattazzo.publictransportgtfs.activity.maps.GeoJsonMapsActivity_
 import com.gmail.fattazzo.publictransportgtfs.adapter.recycler.BindableView
 import com.gmail.fattazzo.publictransportgtfs.feeds.source.GeoJson
 import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.LocationsManager
 import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.domain.Operator
+import com.gmail.fattazzo.publictransportgtfs.gtfs.importer.GtfsImporterService
+import com.gmail.fattazzo.publictransportgtfs.gtfs.importer.GtfsImporterService_
 import com.gmail.fattazzo.publictransportgtfs.utils.Utils
 import org.androidannotations.annotations.Bean
 import org.androidannotations.annotations.Click
@@ -35,9 +38,6 @@ open class OperatorView(context: Context?) : BindableView<Operator>(context) {
     lateinit var locationTV: TextView
 
     @ViewById
-    lateinit var geoJsonMapButton: ImageButton
-
-    @ViewById
     lateinit var websiteButton: ImageButton
 
     @Bean
@@ -46,12 +46,11 @@ open class OperatorView(context: Context?) : BindableView<Operator>(context) {
     @Bean
     lateinit var locationsManager: LocationsManager
 
-    private var idOperator: String = ""
-    private var geoJson: GeoJson? = null
+    private lateinit var operator: Operator
 
     override fun bind(item: Operator) {
 
-        idOperator = item.onestopId.orEmpty()
+        operator = item
 
         nameTV.text = item.name
         websiteTV.text = item.website
@@ -66,20 +65,25 @@ open class OperatorView(context: Context?) : BindableView<Operator>(context) {
         val location = locationsManager.getLocationByCode(item.state.orEmpty())
         locationTV.text = location.name
         locationTV.visibility = if (locationTV.text.isNotBlank()) View.VISIBLE else View.GONE
-
-        geoJson = GeoJson.fromOperator(item)
-        geoJsonMapButton.visibility = if (geoJson != null) View.VISIBLE else View.GONE
     }
 
     @Click
     fun geoJsonMapButtonClicked() {
-        if (geoJson != null)
-            GeoJsonMapsActivity_.intent(context).geoJson(geoJson).start()
+        GeoJsonMapsActivity_.intent(context).geoJson(GeoJson.fromOperator(operator)).start()
     }
 
     @Click
     fun websiteButtonClicked() {
         if (websiteTV.text.isNotBlank())
             utils.openLink(websiteTV.text.toString())
+    }
+
+    @Click
+    fun downloadButtonClicked() {
+        if (!GtfsImporterService.running) {
+            GtfsImporterService_.intent(context).importa(operator.onestopId).start()
+        } else {
+            Toast.makeText(context, "[ToDo] Attendere, un'altra importaizone è in corso", Toast.LENGTH_SHORT).show()
+        }
     }
 }

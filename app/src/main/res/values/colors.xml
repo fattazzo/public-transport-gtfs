@@ -6,6 +6,7 @@
     <color name="colorPrimaryDark">#6b9b37</color>
 
     <color name="textColor">#000000</color>
+    <color name="textColorInactive">#aba5a5</color>
     <color name="background_color">#ffffff</color>
     <color name="background_color_dark">#efeded</color>
 
