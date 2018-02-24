@@ -1,14 +1,18 @@
 package com.gmail.fattazzo.publictransportgtfs.fragment.main
 
+import android.support.constraint.ConstraintLayout
+import android.view.View
 import com.afollestad.materialdialogs.MaterialDialog
-import com.gmail.fattazzo.gtfsdb.manager.DBManager
+import com.gmail.fattazzo.gtfsdb.entities.BaseModel
+import com.gmail.fattazzo.gtfsdb.entities.Operator
 import com.gmail.fattazzo.publictransportgtfs.R
 import com.gmail.fattazzo.publictransportgtfs.fragment.BaseFragment
 import com.gmail.fattazzo.publictransportgtfs.fragment.feeds.source.transitland.ParamsFragment_
 import com.gmail.fattazzo.publictransportgtfs.utils.FragmentUtils
-import org.androidannotations.annotations.Bean
+import org.androidannotations.annotations.AfterViews
 import org.androidannotations.annotations.Click
 import org.androidannotations.annotations.EFragment
+import org.androidannotations.annotations.ViewById
 
 /**
  * @author fattazzo
@@ -18,11 +22,20 @@ import org.androidannotations.annotations.EFragment
 @EFragment(R.layout.fragment_main)
 open class MainFragment : BaseFragment() {
 
-    @Bean
-    lateinit var dbManager: DBManager
+    @ViewById
+    lateinit var emptyDbLayout: ConstraintLayout
+
+    private var operatorsCount = 0
+
+    @AfterViews
+    fun initViews() {
+        operatorsCount = BaseModel.count(Operator::class.java)
+
+        emptyDbLayout.visibility = if (operatorsCount == 0) View.VISIBLE else View.GONE
+    }
 
     @Click
-    fun buttonClicked() {
+    fun searchFeedsButtonClicked() {
         FragmentUtils.add(activity, ParamsFragment_.builder().build())
     }
 

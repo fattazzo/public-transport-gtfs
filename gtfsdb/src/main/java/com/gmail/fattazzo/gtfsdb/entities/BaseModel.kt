@@ -2,6 +2,7 @@ package com.gmail.fattazzo.gtfsdb.entities
 
 import com.activeandroid.Model
 import com.activeandroid.annotation.Column
+import com.activeandroid.query.Select
 import java.io.Serializable
 
 /**
@@ -13,4 +14,9 @@ abstract class BaseModel : Model(), Serializable {
 
     @Column(length = 50, notNull = true, index = true)
     lateinit var feedId: String
+
+    companion object {
+
+        fun count(clazz: Class<out Model>): Int = Select().from(clazz).count()
+    }
 }
