@@ -4,6 +4,9 @@ buildscript {
     ext.kotlin_version = '1.2.21'
     ext.android_annotation_version = '4.3.1'
     ext.buildToolsVersion = '27.0.2'
+    ext.retrofit_version = '2.1.0'
+    ext.constraint_layout_version = '1.0.2'
+
     repositories {
         google()
         jcenter()

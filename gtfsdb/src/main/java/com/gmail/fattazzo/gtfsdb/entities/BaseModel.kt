@@ -18,5 +18,9 @@ abstract class BaseModel : Model(), Serializable {
     companion object {
 
         fun count(clazz: Class<out Model>): Int = Select().from(clazz).count()
+
+        fun <T : Model> loadAll(clazz: Class<T>): List<T> {
+            return Select().from(clazz).execute<T>()
+        }
     }
 }

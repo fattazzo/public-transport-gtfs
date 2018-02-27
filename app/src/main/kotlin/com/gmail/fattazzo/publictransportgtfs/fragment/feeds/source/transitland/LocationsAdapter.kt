@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
+import com.gmail.fattazzo.feedsources.transitland.domain.Location
 import com.gmail.fattazzo.publictransportgtfs.R
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.domain.Location
 
 
 class LocationsAdapter(private val values: List<Location>, context: Context) : ArrayAdapter<Location>(context, R.layout.item_location_transitland, values) {

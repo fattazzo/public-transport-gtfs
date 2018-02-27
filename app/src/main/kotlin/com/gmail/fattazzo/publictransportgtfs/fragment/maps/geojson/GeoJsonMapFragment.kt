@@ -1,7 +1,7 @@
 package com.gmail.fattazzo.publictransportgtfs.fragment.maps.geojson
 
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.GeoJson
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.GeoJsonFeatures
+import com.gmail.fattazzo.feedsources.GeoJson
+import com.gmail.fattazzo.feedsources.GeoJsonFeatures
 import com.gmail.fattazzo.publictransportgtfs.fragment.BaseFragment
 import com.google.gson.GsonBuilder
 import org.androidannotations.annotations.EFragment

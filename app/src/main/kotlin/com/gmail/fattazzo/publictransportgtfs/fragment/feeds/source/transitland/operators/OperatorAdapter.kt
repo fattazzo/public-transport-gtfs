@@ -2,8 +2,8 @@ package com.gmail.fattazzo.publictransportgtfs.fragment.feeds.source.transitland
 
 import android.content.Context
 import android.view.ViewGroup
+import com.gmail.fattazzo.feedsources.transitland.domain.Operator
 import com.gmail.fattazzo.publictransportgtfs.adapter.recycler.RecyclerViewAdapterBase
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.domain.Operator
 import org.androidannotations.annotations.EBean
 import org.androidannotations.annotations.RootContext
 

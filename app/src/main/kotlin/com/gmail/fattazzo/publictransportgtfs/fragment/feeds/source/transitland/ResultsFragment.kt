@@ -5,12 +5,12 @@ import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.widget.Button
+import com.gmail.fattazzo.feedsources.transitland.domain.Operator
+import com.gmail.fattazzo.feedsources.transitland.domain.response.Meta
+import com.gmail.fattazzo.feedsources.transitland.domain.response.OperatorResponse
+import com.gmail.fattazzo.feedsources.transitland.rest.ApiRestCLient
 import com.gmail.fattazzo.publictransportgtfs.R
 import com.gmail.fattazzo.publictransportgtfs.adapter.recycler.RecyclerViewAdapterBase
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.domain.Operator
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.domain.response.Meta
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.domain.response.OperatorResponse
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.rest.ApiRestCLient
 import com.gmail.fattazzo.publictransportgtfs.fragment.BaseFragment
 import com.gmail.fattazzo.publictransportgtfs.fragment.feeds.source.transitland.feeds.FeedsFragment_
 import com.gmail.fattazzo.publictransportgtfs.fragment.feeds.source.transitland.operators.OperatorAdapter

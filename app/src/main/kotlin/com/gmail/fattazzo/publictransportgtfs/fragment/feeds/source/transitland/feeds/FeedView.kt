@@ -4,11 +4,11 @@ import android.content.Context
 import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
+import com.gmail.fattazzo.feedsources.GeoJson
+import com.gmail.fattazzo.feedsources.transitland.domain.Feed
 import com.gmail.fattazzo.publictransportgtfs.R
 import com.gmail.fattazzo.publictransportgtfs.activity.maps.GeoJsonMapsActivity_
 import com.gmail.fattazzo.publictransportgtfs.adapter.recycler.BindableView
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.GeoJson
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.domain.Feed
 import org.androidannotations.annotations.Click
 import org.androidannotations.annotations.EViewGroup
 import org.androidannotations.annotations.ViewById

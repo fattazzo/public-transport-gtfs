@@ -3,11 +3,11 @@ package com.gmail.fattazzo.publictransportgtfs.fragment.feeds.source.transitfeed
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
+import com.gmail.fattazzo.feedsources.transitfeed.domain.Feed
+import com.gmail.fattazzo.feedsources.transitfeed.domain.Location
+import com.gmail.fattazzo.feedsources.transitfeed.domain.response.FeedResponse
+import com.gmail.fattazzo.feedsources.transitfeed.rest.ApiRestCLient
 import com.gmail.fattazzo.publictransportgtfs.R
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitfeed.domain.Feed
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitfeed.domain.Location
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitfeed.domain.response.FeedResponse
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitfeed.rest.ApiRestCLient
 import com.gmail.fattazzo.publictransportgtfs.fragment.BaseFragment
 import org.androidannotations.annotations.*
 import retrofit2.Call

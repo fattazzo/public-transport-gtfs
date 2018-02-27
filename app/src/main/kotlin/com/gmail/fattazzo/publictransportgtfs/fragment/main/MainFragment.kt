@@ -1,16 +1,12 @@
 package com.gmail.fattazzo.publictransportgtfs.fragment.main
 
-import android.support.constraint.ConstraintLayout
-import android.view.View
+import android.widget.RelativeLayout
 import com.afollestad.materialdialogs.MaterialDialog
 import com.gmail.fattazzo.gtfsdb.entities.BaseModel
 import com.gmail.fattazzo.gtfsdb.entities.Operator
 import com.gmail.fattazzo.publictransportgtfs.R
 import com.gmail.fattazzo.publictransportgtfs.fragment.BaseFragment
-import com.gmail.fattazzo.publictransportgtfs.fragment.feeds.source.transitland.ParamsFragment_
-import com.gmail.fattazzo.publictransportgtfs.utils.FragmentUtils
 import org.androidannotations.annotations.AfterViews
-import org.androidannotations.annotations.Click
 import org.androidannotations.annotations.EFragment
 import org.androidannotations.annotations.ViewById
 
@@ -23,7 +19,7 @@ import org.androidannotations.annotations.ViewById
 open class MainFragment : BaseFragment() {
 
     @ViewById
-    lateinit var emptyDbLayout: ConstraintLayout
+    lateinit var rootLayout: RelativeLayout
 
     private var operatorsCount = 0
 
@@ -31,12 +27,13 @@ open class MainFragment : BaseFragment() {
     fun initViews() {
         operatorsCount = BaseModel.count(Operator::class.java)
 
-        emptyDbLayout.visibility = if (operatorsCount == 0) View.VISIBLE else View.GONE
-    }
-
-    @Click
-    fun searchFeedsButtonClicked() {
-        FragmentUtils.add(activity, ParamsFragment_.builder().build())
+        rootLayout.removeAllViews()
+        val lp = RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT)
+        if (operatorsCount == 0) {
+            rootLayout.addView(MainEmptyView_.build(context),lp)
+        } else {
+            rootLayout.addView(MainOperatorView_.build(context),lp)
+        }
     }
 
     override fun backPressed(): Boolean {

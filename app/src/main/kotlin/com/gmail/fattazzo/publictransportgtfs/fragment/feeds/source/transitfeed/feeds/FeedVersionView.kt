@@ -7,9 +7,9 @@ import android.util.TypedValue
 import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
+import com.gmail.fattazzo.feedsources.transitfeed.domain.FeedVersion
 import com.gmail.fattazzo.publictransportgtfs.R
 import com.gmail.fattazzo.publictransportgtfs.adapter.recycler.BindableView
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitfeed.domain.FeedVersion
 import org.androidannotations.annotations.EViewGroup
 import org.androidannotations.annotations.ViewById
 import java.util.*

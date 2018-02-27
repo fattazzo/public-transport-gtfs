@@ -5,12 +5,12 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import com.gmail.fattazzo.feedsources.GeoJson
+import com.gmail.fattazzo.feedsources.transitland.LocationsManager
+import com.gmail.fattazzo.feedsources.transitland.domain.Operator
 import com.gmail.fattazzo.publictransportgtfs.R
 import com.gmail.fattazzo.publictransportgtfs.activity.maps.GeoJsonMapsActivity_
 import com.gmail.fattazzo.publictransportgtfs.adapter.recycler.BindableView
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.GeoJson
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.LocationsManager
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.domain.Operator
 import com.gmail.fattazzo.publictransportgtfs.gtfs.importer.GtfsImporterService
 import com.gmail.fattazzo.publictransportgtfs.gtfs.importer.GtfsImporterService_
 import com.gmail.fattazzo.publictransportgtfs.utils.Utils

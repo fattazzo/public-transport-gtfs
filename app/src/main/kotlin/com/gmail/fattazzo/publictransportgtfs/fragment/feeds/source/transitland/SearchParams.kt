@@ -1,6 +1,6 @@
 package com.gmail.fattazzo.publictransportgtfs.fragment.feeds.source.transitland
 
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.domain.Location
+import com.gmail.fattazzo.feedsources.transitland.domain.Location
 import java.io.Serializable
 
 /**

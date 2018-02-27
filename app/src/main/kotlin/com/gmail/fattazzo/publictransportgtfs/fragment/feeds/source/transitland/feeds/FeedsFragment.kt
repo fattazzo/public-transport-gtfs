@@ -3,9 +3,9 @@ package com.gmail.fattazzo.publictransportgtfs.fragment.feeds.source.transitland
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
+import com.gmail.fattazzo.feedsources.transitland.domain.Feed
+import com.gmail.fattazzo.feedsources.transitland.rest.ApiRestCLient
 import com.gmail.fattazzo.publictransportgtfs.R
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.domain.Feed
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.rest.ApiRestCLient
 import com.gmail.fattazzo.publictransportgtfs.fragment.BaseFragment
 import org.androidannotations.annotations.*
 import retrofit2.Call

@@ -2,9 +2,9 @@ package com.gmail.fattazzo.publictransportgtfs.fragment.feeds.source.transitland
 
 import android.widget.Spinner
 import android.widget.TextView
+import com.gmail.fattazzo.feedsources.transitland.LocationsManager
+import com.gmail.fattazzo.feedsources.transitland.domain.Location
 import com.gmail.fattazzo.publictransportgtfs.R
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.LocationsManager
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitland.domain.Location
 import com.gmail.fattazzo.publictransportgtfs.fragment.BaseFragment
 import com.gmail.fattazzo.publictransportgtfs.utils.FragmentUtils
 import com.hbb20.CountryCodePicker

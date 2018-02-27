@@ -3,9 +3,9 @@ package com.gmail.fattazzo.publictransportgtfs.activity.maps
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.afollestad.materialdialogs.MaterialDialog
+import com.gmail.fattazzo.feedsources.GeoJson
+import com.gmail.fattazzo.feedsources.GeoJsonFeatures
 import com.gmail.fattazzo.publictransportgtfs.R
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.GeoJson
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.GeoJsonFeatures
 import com.gmail.fattazzo.publictransportgtfs.fragment.maps.FragmentMapsSelector
 import com.gmail.fattazzo.publictransportgtfs.utils.FragmentUtils
 import org.androidannotations.annotations.EActivity

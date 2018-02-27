@@ -1,1 +1,1 @@
-include ':app', ':gtfsparser', ':gtfsdb'
+include ':app', ':gtfsparser', ':gtfsdb', ':feedsources'

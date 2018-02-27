@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="entry_agency">Agenzia</string>
+    <string name="entry_agency">Azienda</string>
     <string name="entry_calendar">Calendario</string>
     <string name="entry_calendar_date">Data Calendario</string>
     <string name="entry_fare_attribute">Attributo tariffa</string>
     <string name="entry_fare_rule">Regola tariffa</string>
     <string name="entry_feed_info">Info feed</string>
-    <string name="entry_route">Itinerario</string>
+    <string name="entry_route">Percorso</string>
     <string name="entry_shape">Modello</string>
     <string name="entry_stop">Fermata</string>
     <string name="entry_stop_time">Orario fermata</string>
     <string name="entry_transfer">Trasferimento</string>
-    <string name="entry_trip">Viaggio</string>
+    <string name="entry_trip">Corsa</string>
 
-    <string name="entry_agencies">Agenzie</string>
+    <string name="entry_agencies">Aziende</string>
     <string name="entry_calendars">Calendari</string>
     <string name="entry_calendar_dates">Date calendario</string>
     <string name="entry_fare_attributes">Attributi tariffe</string>
     <string name="entry_fare_rules">Regole tariffe</string>
     <string name="entry_feed_infos">Info feed</string>
-    <string name="entry_routes">Itinerari</string>
+    <string name="entry_routes">Percorsi</string>
     <string name="entry_shapes">Modelli</string>
     <string name="entry_stops">Fermate</string>
     <string name="entry_stop_times">Orari fermate</string>
     <string name="entry_transfers">Trasferimenti</string>
-    <string name="entry_trips">Viaggi</string>
+    <string name="entry_trips">Corse</string>
 </resources>

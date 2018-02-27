@@ -3,6 +3,7 @@ package com.gmail.fattazzo.gtfsdb.entities
 import com.activeandroid.Model
 import com.activeandroid.annotation.Column
 import com.activeandroid.annotation.Table
+import com.activeandroid.query.Select
 import java.io.Serializable
 
 @Table(name = "operator")
@@ -30,6 +31,10 @@ class Operator : Model(), Serializable {
     var metro: String? = null
 
     companion object {
+
+        fun load(): Operator? {
+            return Select().from(Operator::class.java).executeSingle()
+        }
 
         fun build(country: String?, metro: String?, name: String?, shortName: String?,
                   uniqueId: String, state: String?, website: String?): Operator {

@@ -6,11 +6,11 @@ import android.support.v7.widget.RecyclerView
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.TextView
+import com.gmail.fattazzo.feedsources.transitfeed.domain.Location
+import com.gmail.fattazzo.feedsources.transitfeed.domain.response.LocationResponse
+import com.gmail.fattazzo.feedsources.transitfeed.rest.ApiRestCLient
 import com.gmail.fattazzo.publictransportgtfs.R
 import com.gmail.fattazzo.publictransportgtfs.adapter.recycler.RecyclerViewAdapterBase
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitfeed.domain.Location
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitfeed.domain.response.LocationResponse
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitfeed.rest.ApiRestCLient
 import com.gmail.fattazzo.publictransportgtfs.fragment.BaseFragment
 import com.gmail.fattazzo.publictransportgtfs.fragment.feeds.source.transitfeed.feeds.FeedsFragment_
 import com.gmail.fattazzo.publictransportgtfs.fragment.main.MainFragment_
@@ -91,7 +91,7 @@ open class LocationsFragment : BaseFragment() {
 
         if (!locations.isEmpty()) {
             titleTV.text = locations[0].parent?.name
-            titleTV.visibility = if(titleTV.text.isNotBlank()) VISIBLE else GONE
+            titleTV.visibility = if (titleTV.text.isNotBlank()) VISIBLE else GONE
         }
 
     }

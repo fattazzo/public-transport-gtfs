@@ -1,9 +1,9 @@
 package com.gmail.fattazzo.publictransportgtfs.fragment.feeds.source.transitfeed.feeds
 
 import android.content.Context
+import com.gmail.fattazzo.feedsources.transitfeed.domain.FeedVersion
 import com.gmail.fattazzo.publictransportgtfs.adapter.BaseAdapterExt
 import com.gmail.fattazzo.publictransportgtfs.adapter.recycler.BindableView
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitfeed.domain.FeedVersion
 import org.androidannotations.annotations.EBean
 
 /**

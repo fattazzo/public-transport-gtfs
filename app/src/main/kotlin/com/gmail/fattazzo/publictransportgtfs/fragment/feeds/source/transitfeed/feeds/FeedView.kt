@@ -5,12 +5,12 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import com.gmail.fattazzo.feedsources.transitfeed.domain.Feed
+import com.gmail.fattazzo.feedsources.transitfeed.domain.FeedVersion
+import com.gmail.fattazzo.feedsources.transitfeed.domain.response.FeedVersionResponse
+import com.gmail.fattazzo.feedsources.transitfeed.rest.ApiRestCLient
 import com.gmail.fattazzo.publictransportgtfs.R
 import com.gmail.fattazzo.publictransportgtfs.adapter.recycler.BindableView
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitfeed.domain.Feed
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitfeed.domain.FeedVersion
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitfeed.domain.response.FeedVersionResponse
-import com.gmail.fattazzo.publictransportgtfs.feeds.source.transitfeed.rest.ApiRestCLient
 import com.gmail.fattazzo.publictransportgtfs.utils.AnimationUtils
 import org.androidannotations.annotations.AfterViews
 import org.androidannotations.annotations.Click
