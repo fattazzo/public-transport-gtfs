@@ -5,4 +5,9 @@
     <string name="import_feed_download">Donload dati</string>
     <string name="import_feed_finish">Completata</string>
     <string name="import_feed_error">Errore</string>
+
+    <string name="import_confirm_dialog_title">Conferma importazione</string>
+    <string name="import_confirm_dialog_message">L\'importazione dei dati può richiedere del tempo o potrebbe fallire nel caso la memoria del telefono non fosse sufficiente, continuare?</string>
+
+    <string name="import_in_progress">Un\'importazione è già in corso, attendere prego…</string>
 </resources>

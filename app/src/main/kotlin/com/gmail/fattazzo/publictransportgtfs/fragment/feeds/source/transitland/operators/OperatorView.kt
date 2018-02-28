@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import com.afollestad.materialdialogs.MaterialDialog
 import com.gmail.fattazzo.feedsources.GeoJson
 import com.gmail.fattazzo.feedsources.transitland.LocationsManager
 import com.gmail.fattazzo.feedsources.transitland.domain.Operator
@@ -81,9 +82,18 @@ open class OperatorView(context: Context?) : BindableView<Operator>(context) {
     @Click
     fun downloadButtonClicked() {
         if (!GtfsImporterService.running) {
-            GtfsImporterService_.intent(context).importa(operator.onestopId).start()
+            MaterialDialog.Builder(context)
+                    .title(R.string.import_confirm_dialog_title)
+                    .content(R.string.import_confirm_dialog_message)
+                    .cancelable(false)
+                    .positiveText(android.R.string.ok)
+                    .onPositive { _, _ -> GtfsImporterService_.intent(context).importa(operator.onestopId).start() }
+                    .negativeText(android.R.string.cancel)
+                    .onNegative { dialog, _ -> dialog.dismiss() }
+                    .build()
+                    .show()
         } else {
-            Toast.makeText(context, "[ToDo] Attendere, un'altra importaizone è in corso", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, resources.getString(R.string.import_in_progress), Toast.LENGTH_SHORT).show()
         }
     }
 }
