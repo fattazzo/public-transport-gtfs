@@ -14,6 +14,7 @@ import android.view.MenuItem
 import com.afollestad.materialdialogs.MaterialDialog
 import com.gmail.fattazzo.publictransportgtfs.R
 import com.gmail.fattazzo.publictransportgtfs.fragment.BaseFragment
+import com.gmail.fattazzo.publictransportgtfs.fragment.feeds.source.transitland.ParamsFragment_
 import com.gmail.fattazzo.publictransportgtfs.fragment.main.MainFragment_
 import com.gmail.fattazzo.publictransportgtfs.utils.FragmentUtils
 import com.gmail.fattazzo.publictransportgtfs.utils.PermissionsUtil
@@ -57,17 +58,7 @@ open class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
         when (menuItem.itemId) {
-        /**
-        R.id.nav_current_season_driver -> FragmentUtils.replace(this, CurrentDriversFragment_.builder().build())
-        R.id.nav_current_season_constructor -> FragmentUtils.replace(this, CurrentConstructorsFragment_.builder().build())
-        R.id.nav_current_season_race -> FragmentUtils.replace(this, CurrentRacesFragment_.builder().build())
-        R.id.nav_news -> FragmentUtils.replace(this, NewsFragment_.builder().build())
-        R.id.nav_collaborate -> FragmentUtils.replace(this, CollaborateFragment_.builder().build())
-        R.id.nav_stats_drivers -> FragmentUtils.replace(this, StatisticsDriversFragment_.builder().build())
-        R.id.nav_stats_constructors -> FragmentUtils.replace(this, StatisticsConstructorsFragment_.builder().build())
-        R.id.nav_stats_season -> FragmentUtils.replace(this, StatisticsSeasonFragment_.builder().build())
-        R.id.nav_about -> AboutActivity_.intent(this).start()
-         **/
+            R.id.nav_search_feeds -> FragmentUtils.replace(this, ParamsFragment_.builder().build())
         }
 
         drawerLayout.closeDrawer(GravityCompat.START)

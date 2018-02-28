@@ -42,7 +42,7 @@
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/card_bg_color">
+                android:background="@android:color/holo_blue_dark">
 
                 <TextView
                     android:id="@+id/operatorTV"
@@ -54,8 +54,10 @@
                     android:layout_marginTop="8dp"
                     android:ellipsize="end"
                     android:gravity="center_vertical"
-                    android:maxLines="2"
+                    android:maxLines="1"
+                    android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.Medium"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -92,7 +94,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView14"
-                    app:srcCompat="@drawable/stops" />
+                    app:srcCompat="@drawable/stop" />
 
                 <TextView
                     android:id="@+id/textView14"
@@ -140,7 +142,7 @@
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@android:color/holo_blue_light">
+                android:background="@android:color/holo_red_light">
 
                 <ImageView
                     android:id="@+id/imageView8"
@@ -152,7 +154,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView16"
-                    app:srcCompat="@drawable/routes" />
+                    app:srcCompat="@drawable/route" />
 
                 <TextView
                     android:id="@+id/textView16"
@@ -212,7 +214,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView18"
-                    app:srcCompat="@drawable/bus" />
+                    app:srcCompat="@drawable/trip" />
 
                 <TextView
                     android:id="@+id/textView18"
@@ -258,7 +260,7 @@
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@android:color/holo_red_light">
+                android:background="@android:color/holo_blue_light">
 
                 <TextView
                     android:id="@+id/textView12"
@@ -299,6 +301,7 @@
             android:layout_marginTop="8dp"
             android:drawableStart="@drawable/search"
             android:text="[ToDo] Cerca fermate"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

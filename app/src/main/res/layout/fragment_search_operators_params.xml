@@ -21,7 +21,6 @@
         android:id="@+id/countrySpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         app:ccp_autoDetectCountry="false"
         app:ccp_autoDetectLanguage="true"
@@ -92,7 +91,7 @@
         android:tint="@color/textColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_search" />
+        app:srcCompat="@drawable/search" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/clearFAB"

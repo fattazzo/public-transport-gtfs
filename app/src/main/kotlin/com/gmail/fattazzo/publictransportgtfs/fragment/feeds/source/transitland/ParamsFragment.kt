@@ -28,8 +28,9 @@ open class ParamsFragment : BaseFragment(), CountryCodePicker.OnCountryChangeLis
     @ViewById
     lateinit var locationSpinner: Spinner
 
+    @JvmField
     @ViewById
-    lateinit var nameTV: TextView
+    var nameTV: TextView? = null
 
     @Bean
     lateinit var locationsManager: LocationsManager
@@ -49,7 +50,7 @@ open class ParamsFragment : BaseFragment(), CountryCodePicker.OnCountryChangeLis
 
         populateLocations()
 
-        nameTV.text = searchParams.name.orEmpty()
+        nameTV?.text = searchParams.name.orEmpty()
     }
 
     private fun populateLocations() {
@@ -68,7 +69,7 @@ open class ParamsFragment : BaseFragment(), CountryCodePicker.OnCountryChangeLis
 
     @FocusChange
     fun nameTVFocusChanged() {
-        searchParams.name = nameTV.text.toString()
+        searchParams.name = nameTV?.text?.toString()
     }
 
     @Click

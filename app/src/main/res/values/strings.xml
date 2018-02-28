@@ -12,4 +12,9 @@
     <string name="country">Country</string>
     <string name="area">Area</string>
     <string name="operator_name">Operator name</string>
+
+    <string name="loading_operators">Loading operators…</string>
+
+    <string name="prev">Prev.</string>
+    <string name="next">Next</string>
 </resources>

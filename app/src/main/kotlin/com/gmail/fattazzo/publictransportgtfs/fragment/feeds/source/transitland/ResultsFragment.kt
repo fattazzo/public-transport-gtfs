@@ -78,7 +78,7 @@ open class ResultsFragment : BaseFragment() {
             return
         }
 
-        openIndeterminateDialog("[ToDo] Caricamento operatori in corso...")
+        openIndeterminateDialog(resources.getString(R.string.loading_operators))
 
         val options: MutableMap<String, String> = mutableMapOf()
         options["country"] = searchParams.countryCode

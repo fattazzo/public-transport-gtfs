@@ -12,4 +12,9 @@
     <string name="country">Stato</string>
     <string name="area">Area</string>
     <string name="operator_name">Nome operatore</string>
+
+    <string name="loading_operators">Caricamento operatori in corso…</string>
+
+    <string name="prev">Prec.</string>
+    <string name="next">Succ.</string>
 </resources>

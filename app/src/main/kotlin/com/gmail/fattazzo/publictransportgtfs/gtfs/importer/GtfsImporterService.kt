@@ -66,6 +66,8 @@ open class GtfsImporterService : IntentService("GtfsImporterService") {
                     }
                 } catch (e: Exception) {
                     println(e.message)
+                    dbManager.recreate()
+                    running = false
                 }
 
             }
@@ -126,8 +128,7 @@ open class GtfsImporterService : IntentService("GtfsImporterService") {
     private fun showSyncNotification() {
         builder = NotificationCompat.Builder(applicationContext, CHANNEL_ID)
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle("Importazione feed")
-                //.setTicker(context.getString(R.string.text))
+                .setContentTitle(operator?.name.orEmpty())
                 .setAutoCancel(false)
                 .setOnlyAlertOnce(true)
         notificationManager.notify(NOTIFICATION_ID, builder!!.build())
@@ -135,16 +136,21 @@ open class GtfsImporterService : IntentService("GtfsImporterService") {
 
     private fun updateNotification(event: GtfsParseEvent) {
         if (builder != null) {
-            builder!!.setContentTitle("Importazione ${operator!!.name}")
+            builder!!.setContentTitle(resources.getString(R.string.import_feed_title, operator!!.name))
             when (event.parseAction) {
-                ParseAction.PARSE_STARTED -> builder!!.setContentText("Start")
-                ParseAction.DOWNLOAD_STARTED -> builder!!.setContentText("Download data")
-                ParseAction.DOWNLOAD_FINISHED -> builder!!.setContentText("Download data")
+                ParseAction.PARSE_STARTED -> builder!!.setContentText(resources.getString(R.string.import_feed_start))
+                ParseAction.DOWNLOAD_STARTED -> builder!!.setContentText(resources.getString(R.string.import_feed_download))
+                ParseAction.DOWNLOAD_FINISHED -> builder!!.setContentText(resources.getString(R.string.import_feed_download))
                 ParseAction.ENTRY_IMPORT -> {
-                    builder!!.setContentText("${event.gtfsEntry!!} ... ${event.count!!}")
+                    try {
+                        val resId = resources.getIdentifier("entry_${event.gtfsEntry!!}", "string", packageName)
+                        builder!!.setContentText(resources.getString(resId) + "... ${event.count!!}")
+                    } catch (e: java.lang.Exception) {
+                        builder!!.setContentText("${event.gtfsEntry!!}... ${event.count!!}")
+                    }
                 }
-                ParseAction.PARSE_FINISHED -> builder!!.setContentText("Finish")
-                ParseAction.PARSE_ABORTED -> builder!!.setContentText("Error")
+                ParseAction.PARSE_FINISHED -> builder!!.setContentText(resources.getString(R.string.import_feed_finish))
+                ParseAction.PARSE_ABORTED -> builder!!.setContentText(resources.getString(R.string.import_feed_error))
             }
 
             notificationManager.notify(NOTIFICATION_ID, builder!!.build())

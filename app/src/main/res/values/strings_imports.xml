@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="import_feed_title">Import %s</string>
+    <string name="import_feed_start">Start</string>
+    <string name="import_feed_download">Donload data</string>
+    <string name="import_feed_finish">Finish</string>
+    <string name="import_feed_error">Error occurred</string>
+</resources>
