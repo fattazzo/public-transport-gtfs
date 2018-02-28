@@ -1,5 +1,7 @@
 package com.gmail.fattazzo.gtfsparser.files.definition
 
+import com.gmail.fattazzo.gtfsparser.files.processor.datatype.DataType
+
 /**
  * @author fattazzo
  *         <p/>
@@ -10,6 +12,8 @@ interface FileDefinition {
     val name: String
 
     val columnsHeader: Array<String>
+
+    val columnsType: Array<DataType>
 
     fun tableName(): String {
         return name.substringBefore(".")

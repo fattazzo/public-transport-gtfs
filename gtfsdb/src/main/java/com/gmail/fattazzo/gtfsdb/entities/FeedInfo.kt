@@ -2,7 +2,6 @@ package com.gmail.fattazzo.gtfsdb.entities
 
 import com.activeandroid.annotation.Column
 import com.activeandroid.annotation.Table
-import java.text.SimpleDateFormat
 import java.util.*
 
 /**
@@ -23,27 +22,11 @@ class FeedInfo : BaseModel() {
     var lang: String? = null
 
     @Column(name = "feed_start_date")
-    private var startDateString: String? = null
+    var startDate: Date? = null
 
     @Column(name = "feed_end_date")
-    private var endDateString: String? = null
+    var endDate: Date? = null
 
     @Column(name = "feed_version", length = 50)
     var version: String? = null
-
-    val startDate : Date? by lazy {
-        if(startDateString != null) {
-             SimpleDateFormat("yyyyMMdd").parse(startDateString)
-        } else {
-            null
-        }
-    }
-
-    val endDate : Date? by lazy {
-        if(endDateString != null) {
-            SimpleDateFormat("yyyyMMdd").parse(endDateString)
-        } else {
-            null
-        }
-    }
 }

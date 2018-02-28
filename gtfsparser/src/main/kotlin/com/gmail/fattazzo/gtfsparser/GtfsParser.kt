@@ -54,7 +54,11 @@ class GtfsParser {
                 val reader = CsvReader(InputStreamReader(zipInputStream, "UTF-8"))
                 reader.readHeaders()
 
-                val fileProcessor = FileProcessorFactory.getProcessor(entry.name) ?: continue
+                val fileProcessor = FileProcessorFactory.getProcessor(entry.name)
+                if (fileProcessor == null) {
+                    entry = zipInputStream.nextEntry
+                    continue
+                }
 
                 val inserts = mutableListOf<String>()
                 var idx = 0
@@ -65,7 +69,12 @@ class GtfsParser {
                         return
                     }
 
-                    val columnValuesMap = reader.headers.map { it to "'" + reader.get(it).replace("\'", "\'\'") + "'" }.toMap()
+                    val columnValuesMap = reader.headers.map {
+                        it.replace("\uFEFF", "") to
+                                reader.get(it)
+                                        .replace("\uFEFF", "")
+                                        .replace("\'", "\'\'")
+                    }.toMap()
                     val sqlInsert = fileProcessor.createSQLInsert(feedId, columnValuesMap)
                             ?: continue
 

@@ -1,6 +1,7 @@
 package com.gmail.fattazzo.gtfsparser.files.processor
 
 import com.gmail.fattazzo.gtfsparser.files.definition.FileDefinition
+import com.gmail.fattazzo.gtfsparser.files.processor.datatype.DataTypeProcessor
 
 /**
  * @author fattazzo
@@ -15,13 +16,16 @@ class DefaultFileProcessor(val fileSpec: FileDefinition) {
 
     private fun createColumnsInsert(headers: Set<String>): String? {
 
-        validHeaders = headers.filter { fileSpec.columnsHeader.contains(it.replace("\uFEFF", "")) }
+        validHeaders = headers.filter { fileSpec.columnsHeader.contains(it) }
 
-        return "feedId," + validHeaders.joinToString(",").replace("\uFEFF", "")
+        return "feedId," + validHeaders.joinToString(",")
     }
 
     private fun createValues(feedId: String, columnValuesMap: Map<String, String>): String {
-        return "'$feedId'," + validHeaders.map { columnValuesMap[it] }.joinToString(",")
+        return "'$feedId'," + validHeaders.joinToString(",") {
+            val dataType = fileSpec.columnsType[fileSpec.columnsHeader.indexOf(it)]
+            DataTypeProcessor.process(columnValuesMap[it], dataType)
+        }
     }
 
     fun createSQLInsert(feedId: String, columnValuesMap: Map<String, String>): String? {
