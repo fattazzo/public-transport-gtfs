@@ -20,7 +20,7 @@ import org.osmdroid.views.overlay.FolderOverlay
  *         <p/>
  *         date: 08/02/18
  */
-@EFragment(R.layout.fragment_maps_openstreet)
+@EFragment(R.layout.fragment_maps_openstreet_geojson)
 open class OpenStreetGeoJsonFragment : GeoJsonMapFragment(), MapView.OnFirstLayoutListener {
 
     @ViewById

@@ -20,7 +20,11 @@ abstract class BaseAdapterExt<T> : BaseAdapter() {
     @RootContext
     lateinit var rootContext: Context
 
-    private var items: List<T> = listOf()
+    var items: List<T> = listOf()
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
 
     override fun getCount(): Int {
         return items.size

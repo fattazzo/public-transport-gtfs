@@ -2,6 +2,7 @@ package com.gmail.fattazzo.gtfsdb.entities
 
 import com.activeandroid.annotation.Column
 import com.activeandroid.annotation.Table
+import com.activeandroid.query.Select
 import com.gmail.fattazzo.gtfsdb.entities.types.StopLocationType
 import java.math.BigDecimal
 
@@ -48,4 +49,18 @@ class Stop : BaseModel() {
 
     @Column(name = "wheelchair_boarding", length = 5)
     var wheelchairBoarding: String? = null
+
+    // Transient properties
+    var selected: Boolean = false
+
+    companion object {
+
+        fun search(value: String): MutableList<Stop>? {
+            return Select()
+                    .from(Stop::class.java)
+                    .where("stop_name like(?)", "%" + value + "%")
+                    .or("stop_desc like(?)", "%" + value + "%")
+                    .execute<Stop>()
+        }
+    }
 }

@@ -25,7 +25,7 @@ import org.json.JSONObject
  *         <p/>
  *         date: 08/02/18
  */
-@EFragment(R.layout.fragment_maps_google)
+@EFragment(R.layout.fragment_maps_google_geojson)
 open class GoogleMapGeoJsonFragment : GeoJsonMapFragment(), OnMapReadyCallback {
 
     @ViewById

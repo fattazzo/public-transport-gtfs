@@ -7,6 +7,7 @@ import android.widget.ScrollView
 import android.widget.TextView
 import com.gmail.fattazzo.gtfsdb.entities.*
 import com.gmail.fattazzo.publictransportgtfs.R
+import com.gmail.fattazzo.publictransportgtfs.activity.maps.MapsActivity_
 import org.androidannotations.annotations.*
 import java.text.DateFormat
 
@@ -91,5 +92,10 @@ open class MainOperatorView(context: Context?) : ScrollView(context) {
                 }
             }
         }
+    }
+
+    @Click
+    internal fun stopsButtonClicked() {
+        MapsActivity_.intent(context).start()
     }
 }

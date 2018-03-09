@@ -12,6 +12,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:context="com.gmail.fattazzo.publictransportgtfs.activity.maps.MapsActivity" />
+        tools:context="com.gmail.fattazzo.publictransportgtfs.activity.maps.GeoJsonMapsActivity" />
 
 </android.support.constraint.ConstraintLayout>

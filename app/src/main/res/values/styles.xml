@@ -31,6 +31,12 @@
         <item name="listPreferredItemHeightSmall">@dimen/design_navigation_items_height</item>
 
         <item name="android:buttonStyle">@style/AppButton</item>
+
+        <item name="searchViewStyle">@style/MySearchViewStyle</item>
+    </style>
+
+    <style name="MySearchViewStyle" parent="Widget.AppCompat.Light.SearchView">
+        <item name="android:background">@drawable/searchview_bg_rounded</item>
     </style>
 
     <style name="AppButton" parent="Widget.AppCompat.Button.Colored">

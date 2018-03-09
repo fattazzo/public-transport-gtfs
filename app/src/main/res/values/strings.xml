@@ -17,4 +17,7 @@
 
     <string name="prev">Prev.</string>
     <string name="next">Next</string>
+
+    <string name="lat">Lat</string>
+    <string name="lon">Lon</string>
 </resources>

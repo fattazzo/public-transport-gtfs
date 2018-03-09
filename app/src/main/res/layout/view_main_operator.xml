@@ -301,7 +301,6 @@
             android:layout_marginTop="8dp"
             android:drawableStart="@drawable/search"
             android:text="[ToDo] Cerca fermate"
-            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

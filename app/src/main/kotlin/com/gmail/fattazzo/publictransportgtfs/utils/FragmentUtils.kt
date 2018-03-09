@@ -18,13 +18,15 @@ object FragmentUtils {
     fun replace(activity: Activity?, fragment: Fragment, containerResId: Int = R.id.container, animationType: AnimationType = AnimationType.NONE) {
         val transaction = (activity as AppCompatActivity).supportFragmentManager.beginTransaction()
         setAnimation(transaction, animationType)
-        transaction.replace(containerResId, fragment).addToBackStack(null).commit()
+        transaction.replace(containerResId, fragment, fragment.javaClass.simpleName).addToBackStack(null).commit()
+        activity.supportFragmentManager.executePendingTransactions()
     }
 
     fun add(activity: Activity?, fragment: Fragment, containerResId: Int = R.id.container, animationType: AnimationType = AnimationType.NONE) {
         val transaction = (activity as AppCompatActivity).supportFragmentManager.beginTransaction()
         setAnimation(transaction, animationType)
-        transaction.add(containerResId, fragment).addToBackStack(null).commit()
+        transaction.add(containerResId, fragment, fragment.javaClass.simpleName).addToBackStack(null).commit()
+        activity.supportFragmentManager.executePendingTransactions()
     }
 
     private fun setAnimation(transaction: FragmentTransaction, animationType: AnimationType) {

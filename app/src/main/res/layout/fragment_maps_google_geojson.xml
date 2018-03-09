@@ -1,7 +1,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:fab="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <fragment
         android:id="@+id/mapFragment"
@@ -15,11 +15,11 @@
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:paddingBottom="8dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         fab:menu_fab_label="Menu label"
-        fab:menu_icon="@drawable/menu"
+        fab:menu_icon="@drawable/info"
         fab:menu_labels_ellipsize="end"
         fab:menu_labels_singleLine="true">
 
@@ -32,36 +32,21 @@
             fab:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/stopsSearchFab"
+            android:id="@+id/fab2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/search"
-            fab:fab_label="[ToDo] Cerca fermate"
+            android:src="@drawable/download"
+            fab:fab_label="Remove button"
             fab:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/stopsToggleFab"
+            android:id="@+id/fab3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/stop"
-            fab:fab_label="[ToDo] Visualizza/Nascondi fermate"
+            android:src="@drawable/bus"
+            fab:fab_label="Restore Button"
             fab:fab_size="mini" />
 
     </com.github.clans.fab.FloatingActionMenu>
-
-    <android.support.v7.widget.SearchView
-        android:id="@+id/stopsSearchView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:animateLayoutChanges="true"
-        android:gravity="end"
-        android:orientation="horizontal"
-        fab:layout_constraintEnd_toEndOf="parent"
-        fab:layout_constraintHorizontal_bias="1.0"
-        fab:layout_constraintStart_toStartOf="parent"
-        fab:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

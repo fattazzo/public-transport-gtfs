@@ -21,4 +21,12 @@ object FragmentMapsSelector {
         }
     }
 
+    fun getFragment(type: Int): BaseMapFargment {
+        return when (type) {
+            0 -> OpenStreetMapFragment_.builder().build()
+            1 -> GoogleMapFragment_.builder().build()
+            else -> OpenStreetMapFragment_.builder().build()
+        }
+    }
+
 }

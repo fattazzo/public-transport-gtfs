@@ -12,7 +12,7 @@ import org.androidannotations.annotations.EActivity
 import org.androidannotations.annotations.Extra
 
 
-@EActivity(R.layout.activity_maps)
+@EActivity(R.layout.activity_maps_geojson)
 open class GeoJsonMapsActivity : AppCompatActivity() {
 
     @JvmField
