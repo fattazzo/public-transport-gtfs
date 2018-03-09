@@ -95,7 +95,7 @@ open class MainOperatorView(context: Context?) : ScrollView(context) {
     }
 
     @Click
-    internal fun stopsButtonClicked() {
+    internal fun stopsCardViewClicked() {
         MapsActivity_.intent(context).start()
     }
 }

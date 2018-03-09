@@ -20,4 +20,21 @@
 
     <string name="lat">Lat</string>
     <string name="lon">Lon</string>
+
+    <string name="id">Identificativo</string>
+    <string name="created_on">Creato il</string>
+    <string name="updated_on">Aggiornato il</string>
+
+    <string name="select_map_provider">Seleziona il fornitore della mappa</string>
+    <string name="confirm">Conferma</string>
+
+    <string name="map_type">Tipo mappa</string>
+    <string name="select_map_type">Seleziona il tipo di mappa</string>
+    <string name="choose">Seleziona</string>
+
+    <string name="loading_feeds">Caricamento feeds</string>
+
+    <string name="toggle_stops_marker">Visualizza/Nascondi fermate</string>
+    <string name="stops_search">Cerca fermate</string>
+    <string name="show_selected_stops_on_map">Mostra fermate sel. sulla mappa</string>
 </resources>

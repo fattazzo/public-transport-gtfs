@@ -146,7 +146,7 @@ open abstract class BaseMapFargment : BaseFragment(), LocationListener {
     }
 
     override fun backPressed(): Boolean {
-        activity?.supportFragmentManager?.popBackStack()
+        activity?.finish()
         return true
     }
 }

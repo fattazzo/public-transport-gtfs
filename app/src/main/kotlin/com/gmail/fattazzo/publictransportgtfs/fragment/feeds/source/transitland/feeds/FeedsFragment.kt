@@ -3,6 +3,7 @@ package com.gmail.fattazzo.publictransportgtfs.fragment.feeds.source.transitland
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.widget.TextView
 import com.gmail.fattazzo.feedsources.transitland.domain.Feed
 import com.gmail.fattazzo.feedsources.transitland.rest.ApiRestCLient
 import com.gmail.fattazzo.publictransportgtfs.R
@@ -23,10 +24,17 @@ open class FeedsFragment : BaseFragment() {
 
     @InstanceState
     @FragmentArg
+    lateinit var operatorName: String
+
+    @InstanceState
+    @FragmentArg
     lateinit var feedsId: ArrayList<String>
 
     @ViewById
     lateinit var feedsRecyclerView: RecyclerView
+
+    @ViewById
+    lateinit var operatorTV: TextView
 
     @Bean
     lateinit var feedsAdapter: FeedsAdapter
@@ -45,6 +53,8 @@ open class FeedsFragment : BaseFragment() {
         feedsAdapter.notifyDataSetChanged()
 
         loadFeeds()
+
+        operatorTV.text = operatorName
     }
 
     private fun loadFeeds() {
@@ -57,7 +67,7 @@ open class FeedsFragment : BaseFragment() {
         for (id in feedsId) {
             feeds = arrayListOf()
             feedsAdapter.items = mutableListOf()
-            openIndeterminateDialog("[ToDo] Caricamento feed in corso...")
+            openIndeterminateDialog(R.string.loading_feeds)
             ApiRestCLient.feedsService.getFeed(id).enqueue(object : Callback<Feed> {
                 override fun onResponse(call: Call<Feed>, response: Response<Feed>) {
                     closeIndeterminateDialog()

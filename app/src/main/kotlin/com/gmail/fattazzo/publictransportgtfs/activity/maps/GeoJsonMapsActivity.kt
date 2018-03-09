@@ -28,14 +28,14 @@ open class GeoJsonMapsActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             MaterialDialog.Builder(this)
-                    .title("[ToDo] Seleziona il tipo di mappa")
+                    .title(R.string.select_map_provider)
                     .items(R.array.map_providers)
                     .itemsCallbackSingleChoice(0) { _, _, which, _ ->
                         val fragment = FragmentMapsSelector.getGeoJsonFragment(which, geoJson, geoJsonFeatures)
                         FragmentUtils.replace(this@GeoJsonMapsActivity, fragment, containerResId = R.id.mapContainer)
                         true
                     }
-                    .positiveText("[ToDo] choose")
+                    .positiveText(R.string.confirm)
                     .show()
         }
     }

@@ -26,6 +26,10 @@ open class BaseFragment : Fragment() {
         openIndeterminateDialog(title, activity!!)
     }
 
+    open fun openIndeterminateDialog(titleResId: Int) {
+        openIndeterminateDialog(resources.getString(titleResId), activity!!)
+    }
+
     @UiThread(propagation = UiThread.Propagation.ENQUEUE)
     open fun openIndeterminateDialog(title: String, context: Context) {
         if (dialog == null || !dialog!!.isShowing) {

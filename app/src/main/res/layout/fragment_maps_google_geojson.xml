@@ -9,44 +9,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <com.github.clans.fab.FloatingActionMenu
-        android:id="@+id/menuFab"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:paddingBottom="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        fab:menu_fab_label="Menu label"
-        fab:menu_icon="@drawable/info"
-        fab:menu_labels_ellipsize="end"
-        fab:menu_labels_singleLine="true">
-
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/mapTypesFab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/map"
-            fab:fab_label="[ToDo] Map type"
-            fab:fab_size="mini" />
-
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/fab2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/download"
-            fab:fab_label="Remove button"
-            fab:fab_size="mini" />
-
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/fab3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/bus"
-            fab:fab_label="Restore Button"
-            fab:fab_size="mini" />
-
-    </com.github.clans.fab.FloatingActionMenu>
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/mapTypesFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/map"
+        fab:fab_size="normal"
+        fab:layout_constraintBottom_toBottomOf="parent"
+        fab:layout_constraintEnd_toEndOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

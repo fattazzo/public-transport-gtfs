@@ -20,4 +20,21 @@
 
     <string name="lat">Lat</string>
     <string name="lon">Lon</string>
+
+    <string name="id">ID</string>
+    <string name="created_on">Created on</string>
+    <string name="updated_on">Updated on</string>
+
+    <string name="select_map_provider">Select the map provider</string>
+    <string name="confirm">Confirm</string>
+
+    <string name="map_type">Map type</string>
+    <string name="select_map_type">Select the map type</string>
+    <string name="choose">Choose</string>
+
+    <string name="loading_feeds">Loading feeds</string>
+    
+    <string name="toggle_stops_marker">Toggle stops marker</string>
+    <string name="stops_search">Stops search</string>
+    <string name="show_selected_stops_on_map">Show selected stops on map</string>
 </resources>

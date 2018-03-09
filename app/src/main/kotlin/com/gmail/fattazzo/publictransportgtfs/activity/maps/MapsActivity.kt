@@ -1,8 +1,10 @@
 package com.gmail.fattazzo.publictransportgtfs.activity.maps
 
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import com.gmail.fattazzo.publictransportgtfs.R
+import com.gmail.fattazzo.publictransportgtfs.fragment.BaseFragment
 import com.gmail.fattazzo.publictransportgtfs.fragment.maps.BaseMapFargment
 import com.gmail.fattazzo.publictransportgtfs.fragment.maps.FragmentMapsSelector
 import com.gmail.fattazzo.publictransportgtfs.fragment.maps.GoogleMapFragment_
@@ -32,6 +34,23 @@ open class MapsActivity : AppCompatActivity() {
             }
         } else {
             fragment = fragmentMap
+        }
+    }
+
+    override fun onBackPressed() {
+        val fragmentManager = supportFragmentManager
+
+        val fragments = fragmentManager.fragments
+
+        val li = fragments.listIterator(fragments.size)
+        while (li.hasPrevious()) {
+            val fragment = li.previous() as Fragment
+            if (fragment is BaseFragment) {
+                val done = fragment.backPressed()
+                if (done) {
+                    break
+                }
+            }
         }
     }
 }

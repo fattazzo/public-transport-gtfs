@@ -63,7 +63,7 @@ open class ResultsFragment : BaseFragment() {
         operatorAdapter.itemClickListener = object : RecyclerViewAdapterBase.OnItemClickListener<Operator> {
             override fun onItemClick(item: Operator) {
                 val feedsId = ArrayList<String>(item.representedInFeedOnestopIds.orEmpty())
-                FragmentUtils.add(activity!!, FeedsFragment_.builder().feedsId(feedsId).build())
+                FragmentUtils.add(activity!!, FeedsFragment_.builder().operatorName(item.name.orEmpty()).feedsId(feedsId).build())
             }
 
         }

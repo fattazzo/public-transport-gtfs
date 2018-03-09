@@ -2,7 +2,6 @@ package com.gmail.fattazzo.publictransportgtfs.fragment.maps.geojson.google
 
 import android.support.v4.graphics.ColorUtils
 import com.afollestad.materialdialogs.MaterialDialog
-import com.github.clans.fab.FloatingActionMenu
 import com.gmail.fattazzo.publictransportgtfs.R
 import com.gmail.fattazzo.publictransportgtfs.fragment.maps.geojson.GeoJsonMapFragment
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -15,7 +14,6 @@ import com.google.maps.android.data.geojson.GeoJsonPolygon
 import org.androidannotations.annotations.AfterViews
 import org.androidannotations.annotations.Click
 import org.androidannotations.annotations.EFragment
-import org.androidannotations.annotations.ViewById
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -27,9 +25,6 @@ import org.json.JSONObject
  */
 @EFragment(R.layout.fragment_maps_google_geojson)
 open class GoogleMapGeoJsonFragment : GeoJsonMapFragment(), OnMapReadyCallback {
-
-    @ViewById
-    lateinit var menuFab: FloatingActionMenu
 
     private var mMap: GoogleMap? = null
 
@@ -49,7 +44,7 @@ open class GoogleMapGeoJsonFragment : GeoJsonMapFragment(), OnMapReadyCallback {
     }
 
     private fun addColorsToLayer(layer: GeoJsonLayer) {
-        val geoJsonPolygonStyle = layer.defaultPolygonStyle;
+        val geoJsonPolygonStyle = layer.defaultPolygonStyle
         geoJsonPolygonStyle.strokeColor = resources.getColor(android.R.color.holo_blue_dark)
         geoJsonPolygonStyle.fillColor = ColorUtils.setAlphaComponent(resources.getColor(android.R.color.holo_blue_light), 90)
     }
@@ -57,7 +52,7 @@ open class GoogleMapGeoJsonFragment : GeoJsonMapFragment(), OnMapReadyCallback {
     @Click
     fun mapTypesFabClicked() {
         MaterialDialog.Builder(context!!)
-                .title("[ToDo] Seleziona il tipo di mappa")
+                .title(R.string.select_map_type)
                 .items("NORMAL", "SATELLITE", "HYBRID", "TERRAIN")
                 .itemsCallbackSingleChoice(0) { _, _, which, _ ->
                     when (which) {
@@ -67,10 +62,9 @@ open class GoogleMapGeoJsonFragment : GeoJsonMapFragment(), OnMapReadyCallback {
                         3 -> mMap!!.mapType = GoogleMap.MAP_TYPE_TERRAIN
                         else -> mMap!!.mapType = GoogleMap.MAP_TYPE_NORMAL
                     }
-                    menuFab.close(true)
                     true
                 }
-                .positiveText("[ToDo] choose")
+                .positiveText(R.string.choose)
                 .show()
     }
 
