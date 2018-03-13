@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_title">About</string>
+
+    <string name="about_feeds_informations">Tutti i feeds delle aziende di trasporto presenti nella ricerca non sono forniti dall\'applicazione Public Transport GTFS ma sono ricavati dalle API messe a disposizione da Transitland.</string>
+    <string name="about_transitland_add_feed_instructions">Se l\'azienda di trasporto delle tua città non compare nell\'elenco ma fornisce i suoi dati in formato GTFS (General Transit Feed Specification) puoi aggiungerla alla lista in modo che sia utile per te e altri amici che si trovano o visitano la tua zona.
+Farlo è semplicissimo, clicca sul pulsante qui sotto e segui le istruzioni fornite da Transitland.</string>
+    <string name="about_add_feed">Aggiungi feed</string>
+
+    <string name="app_about_text">Public Transport GTFS non si assume nessuna responsabilità della validità dei dati e non comunicherà mai la posizione dell\'utente a terzi</string>
+
+    <string name="github_project">Github poject</string>
+</resources>

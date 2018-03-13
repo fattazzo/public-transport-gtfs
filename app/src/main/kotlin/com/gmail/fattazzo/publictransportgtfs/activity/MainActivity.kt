@@ -14,6 +14,7 @@ import android.view.MenuItem
 import com.afollestad.materialdialogs.MaterialDialog
 import com.gmail.fattazzo.publictransportgtfs.R
 import com.gmail.fattazzo.publictransportgtfs.fragment.BaseFragment
+import com.gmail.fattazzo.publictransportgtfs.fragment.about.AboutFragment_
 import com.gmail.fattazzo.publictransportgtfs.fragment.feeds.source.transitland.ParamsFragment_
 import com.gmail.fattazzo.publictransportgtfs.fragment.main.MainFragment_
 import com.gmail.fattazzo.publictransportgtfs.utils.FragmentUtils
@@ -59,6 +60,7 @@ open class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
         when (menuItem.itemId) {
             R.id.nav_search_feeds -> FragmentUtils.replace(this, ParamsFragment_.builder().build())
+            R.id.nav_about -> FragmentUtils.add(this, AboutFragment_.builder().build())
         }
 
         drawerLayout.closeDrawer(GravityCompat.START)

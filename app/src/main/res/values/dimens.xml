@@ -10,6 +10,7 @@
     <dimen name="font_size_medium">16sp</dimen>
     <dimen name="font_size_large">20sp</dimen>
 
+    <dimen name="button_text_size">12sp</dimen>
 
     <dimen name="design_navigation_icon_padding" tools:override="true" >10dp</dimen>
     <dimen name="design_navigation_items_height">32dp</dimen>

@@ -9,4 +9,6 @@
     <dimen name="font_size_small">18sp</dimen>
     <dimen name="font_size_medium">22sp</dimen>
     <dimen name="font_size_large">32sp</dimen>
+
+    <dimen name="button_text_size">30sp</dimen>
 </resources>

@@ -42,12 +42,14 @@
     <style name="AppButton" parent="Widget.AppCompat.Button.Colored">
         <item name="colorButtonNormal">@color/colorPrimary</item>
         <item name="android:textColor">@color/textColor</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar">
         <item name="android:textSize">@dimen/font_size_small</item>
     </style>
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <!-- General style -->
     <style name="TransparentListView" parent="@android:style/Widget.ListView">
@@ -58,8 +60,7 @@
         <item name="android:cacheColorHint">@android:color/transparent</item>
     </style>
 
-    <style name="TextAppearance" parent="@android:style/TextAppearance">
-    </style>
+    <style name="TextAppearance" parent="@android:style/TextAppearance"></style>
 
     <style name="TextAppearance.Large" parent="@android:style/TextAppearance.Large">
         <item name="android:textSize">@dimen/font_size_large</item>
@@ -73,7 +74,6 @@
         <item name="android:textSize">@dimen/font_size_small</item>
     </style>
 
-    <style name="NavigationDrawerStyle" parent="@style/TextAppearance.Medium">
-    </style>
+    <style name="NavigationDrawerStyle" parent="@style/TextAppearance.Medium"></style>
 
 </resources>
