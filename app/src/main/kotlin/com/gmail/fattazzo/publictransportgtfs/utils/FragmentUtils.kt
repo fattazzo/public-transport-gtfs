@@ -33,7 +33,7 @@ object FragmentUtils {
         when (animationType) {
             AnimationType.RIGHT_TO_LEFT -> transaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right)
             AnimationType.LEFT_TO_RIGHT -> transaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right)
-            AnimationType.FADE_IN -> transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
+            AnimationType.FADE_IN -> transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out,R.anim.fade_in,R.anim.fade_out)
             AnimationType.FADE_OUT -> transaction.setCustomAnimations(R.anim.fade_out, R.anim.fade_in)
             else -> {
                 // No animation

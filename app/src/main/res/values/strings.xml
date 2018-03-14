@@ -37,4 +37,6 @@
     <string name="toggle_stops_marker">Toggle stops marker</string>
     <string name="stops_search">Stops search</string>
     <string name="show_selected_stops_on_map">Show selected stops on map</string>
+
+    <string name="no_feeds_in_result_go_about">Can not find any feeds for your area? Click here to find out how to add it.</string>
 </resources>

@@ -37,4 +37,6 @@
     <string name="toggle_stops_marker">Visualizza/Nascondi fermate</string>
     <string name="stops_search">Cerca fermate</string>
     <string name="show_selected_stops_on_map">Mostra fermate sel. sulla mappa</string>
+
+    <string name="no_feeds_in_result_go_about">Non trovi nessun feed per tua zona? Clicca qui per scoprire come aggiungerlo.</string>
 </resources>

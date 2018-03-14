@@ -6,6 +6,7 @@ import com.gmail.fattazzo.feedsources.transitland.LocationsManager
 import com.gmail.fattazzo.feedsources.transitland.domain.Location
 import com.gmail.fattazzo.publictransportgtfs.R
 import com.gmail.fattazzo.publictransportgtfs.fragment.BaseFragment
+import com.gmail.fattazzo.publictransportgtfs.fragment.about.AboutFragment_
 import com.gmail.fattazzo.publictransportgtfs.utils.FragmentUtils
 import com.hbb20.CountryCodePicker
 import org.androidannotations.annotations.*
@@ -87,6 +88,11 @@ open class ParamsFragment : BaseFragment(), CountryCodePicker.OnCountryChangeLis
     override fun onCountrySelected() {
         searchParams.countryCode = countrySpinner.selectedCountryNameCode
         populateLocations()
+    }
+
+    @Click
+    fun goAboutTVClicked() {
+        FragmentUtils.add(activity, AboutFragment_.builder().build(),animationType = FragmentUtils.AnimationType.FADE_IN)
     }
 
     override fun backPressed(): Boolean {
