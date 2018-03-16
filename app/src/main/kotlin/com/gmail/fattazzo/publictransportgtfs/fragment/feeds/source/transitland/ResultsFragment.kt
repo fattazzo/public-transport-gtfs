@@ -33,17 +33,24 @@ open class ResultsFragment : BaseFragment() {
     @FragmentArg
     lateinit var searchParams: SearchParams
 
+    @JvmField
+    @InstanceState
+    @FragmentArg
+    var backpressHandling: Boolean = true
+
     @Bean
     lateinit var operatorAdapter: OperatorAdapter
 
     @ViewById
     lateinit var resultsRecyclerView: RecyclerView
 
+    @JvmField
     @ViewById
-    lateinit var prevPageButton: Button
+    var prevPageButton: Button? = null
 
+    @JvmField
     @ViewById
-    lateinit var nextPageButton: Button
+    var nextPageButton: Button? = null
 
     @JvmField
     @InstanceState
@@ -55,7 +62,7 @@ open class ResultsFragment : BaseFragment() {
 
     @AfterViews
     fun init() {
-        val mLayoutManager = GridLayoutManager(activity, 1)
+        val mLayoutManager = GridLayoutManager(activity, resources.getInteger(R.integer.transitland_search_result_column))
         resultsRecyclerView.layoutManager = mLayoutManager
         resultsRecyclerView.itemAnimator = DefaultItemAnimator()
         resultsRecyclerView.adapter = operatorAdapter
@@ -93,6 +100,10 @@ open class ResultsFragment : BaseFragment() {
                 perPage = searchParams.perPage,
                 options = options).enqueue(object : Callback<OperatorResponse> {
             override fun onResponse(call: Call<OperatorResponse>, response: Response<OperatorResponse>) {
+                if(nextPageButton == null) {
+                    return
+                }
+
                 closeIndeterminateDialog()
                 if (response.isSuccessful) {
                     println("operators loaded from API: " + response.body().operators?.size)
@@ -109,11 +120,15 @@ open class ResultsFragment : BaseFragment() {
             }
 
             override fun onFailure(call: Call<OperatorResponse>?, t: Throwable?) {
+                if(nextPageButton == null) {
+                    return
+                }
+
                 closeIndeterminateDialog()
                 println("error loading from API")
 
-                prevPageButton.isEnabled = false
-                nextPageButton.isEnabled = false
+                prevPageButton?.isEnabled = false
+                nextPageButton?.isEnabled = false
             }
         })
     }
@@ -122,8 +137,8 @@ open class ResultsFragment : BaseFragment() {
         operatorAdapter.items = operators.orEmpty().toMutableList()
         operatorAdapter.notifyDataSetChanged()
 
-        prevPageButton.isEnabled = meta?.prev != null
-        nextPageButton.isEnabled = meta?.next != null
+        prevPageButton?.isEnabled = meta?.prev != null
+        nextPageButton?.isEnabled = meta?.next != null
     }
 
     @Click
@@ -153,7 +168,8 @@ open class ResultsFragment : BaseFragment() {
     }
 
     override fun backPressed(): Boolean {
-        activity?.supportFragmentManager?.popBackStack()
-        return true
+        if (backpressHandling)
+            activity?.supportFragmentManager?.popBackStack()
+        return backpressHandling
     }
 }

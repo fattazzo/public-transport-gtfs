@@ -56,16 +56,13 @@ open class OperatorView(context: Context?) : BindableView<Operator>(context) {
         nameTV.text = item.name
         websiteTV.text = item.website
         if (websiteTV.text.isNotBlank()) {
-            websiteTV.visibility = View.VISIBLE
             websiteButton.visibility = View.VISIBLE
         } else {
-            websiteTV.visibility = View.GONE
             websiteButton.visibility = View.GONE
         }
 
         val location = locationsManager.getLocationByCode(item.state.orEmpty())
         locationTV.text = location.name
-        locationTV.visibility = if (locationTV.text.isNotBlank()) View.VISIBLE else View.GONE
     }
 
     @Click

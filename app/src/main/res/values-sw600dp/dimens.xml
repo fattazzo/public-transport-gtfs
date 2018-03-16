@@ -6,4 +6,6 @@
     <dimen name="button_text_size">20sp</dimen>
 
     <dimen name="design_navigation_items_height">48dp</dimen>
+
+    <integer name="transitland_search_result_column">1</integer>
 </resources>

@@ -1,5 +1,6 @@
 package com.gmail.fattazzo.publictransportgtfs.fragment.feeds.source.transitland
 
+import android.widget.FrameLayout
 import android.widget.Spinner
 import android.widget.TextView
 import com.gmail.fattazzo.feedsources.transitland.LocationsManager
@@ -7,6 +8,7 @@ import com.gmail.fattazzo.feedsources.transitland.domain.Location
 import com.gmail.fattazzo.publictransportgtfs.R
 import com.gmail.fattazzo.publictransportgtfs.fragment.BaseFragment
 import com.gmail.fattazzo.publictransportgtfs.fragment.about.AboutFragment_
+import com.gmail.fattazzo.publictransportgtfs.fragment.main.MainFragment_
 import com.gmail.fattazzo.publictransportgtfs.utils.FragmentUtils
 import com.hbb20.CountryCodePicker
 import org.androidannotations.annotations.*
@@ -32,6 +34,10 @@ open class ParamsFragment : BaseFragment(), CountryCodePicker.OnCountryChangeLis
     @JvmField
     @ViewById
     var nameTV: TextView? = null
+
+    @JvmField
+    @ViewById
+    var searchContainer: FrameLayout? = null
 
     @Bean
     lateinit var locationsManager: LocationsManager
@@ -81,8 +87,13 @@ open class ParamsFragment : BaseFragment(), CountryCodePicker.OnCountryChangeLis
 
     @Click
     fun searchFABClicked() {
-        FragmentUtils.add(activity, ResultsFragment_.builder().searchParams(searchParams).build(),
-                animationType = FragmentUtils.AnimationType.RIGHT_TO_LEFT)
+        if (searchContainer == null) {
+            FragmentUtils.add(activity, ResultsFragment_.builder().searchParams(searchParams).build(),
+                    animationType = FragmentUtils.AnimationType.RIGHT_TO_LEFT)
+        } else {
+            FragmentUtils.replace(activity, ResultsFragment_.builder().backpressHandling(false).searchParams(searchParams).build(),
+                    animationType = FragmentUtils.AnimationType.FADE_IN, containerResId = R.id.searchContainer)
+        }
     }
 
     override fun onCountrySelected() {
@@ -92,11 +103,11 @@ open class ParamsFragment : BaseFragment(), CountryCodePicker.OnCountryChangeLis
 
     @Click
     fun goAboutTVClicked() {
-        FragmentUtils.add(activity, AboutFragment_.builder().build(),animationType = FragmentUtils.AnimationType.FADE_IN)
+        FragmentUtils.add(activity, AboutFragment_.builder().build(), animationType = FragmentUtils.AnimationType.FADE_IN)
     }
 
     override fun backPressed(): Boolean {
-        activity?.supportFragmentManager?.popBackStack()
+        FragmentUtils.replace(activity, MainFragment_.builder().build())
         return true
     }
 }

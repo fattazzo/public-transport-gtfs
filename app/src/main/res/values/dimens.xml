@@ -15,4 +15,5 @@
     <dimen name="design_navigation_icon_padding" tools:override="true" >10dp</dimen>
     <dimen name="design_navigation_items_height">32dp</dimen>
 
+    <integer name="transitland_search_result_column">1</integer>
 </resources>
