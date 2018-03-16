@@ -8,6 +8,13 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
     <application
         android:name=".GTFSApplication_"
         android:allowBackup="true"
