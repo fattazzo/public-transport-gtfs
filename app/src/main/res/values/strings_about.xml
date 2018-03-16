@@ -12,7 +12,7 @@ Doing it is simple, click on the button below and follow the instructions provid
 
     <string name="app_about_text">Public Transport GTFS assumes no responsibility for the validity of the data and will never communicate the user\'s location to third parties</string>
 
-    <string name="github_project">Github poject</string>
+    <string name="github_project">Github project</string>
     <string name="githubAuthorUrl" translatable="false">https://github.com/fattazzo</string>
     <string name="githubProjectUrl" translatable="false">https://github.com/fattazzo/public-transport-gtfs</string>
 </resources>
